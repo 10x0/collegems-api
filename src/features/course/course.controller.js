@@ -11,8 +11,17 @@ exports.createCourse = async (req, res, next) => {
 
 exports.editCourse = async (req, res, next) => {
   try {
-    await CourseModel.findByIdAndUpdate(req.body._id, req.body);
+    await CourseModel.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({ message: 'Edit successful.' });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+exports.deleteCourse = async (req, res, next) => {
+  try {
+    await CourseModel.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Course removed.' });
   } catch (error) {
     res.status(500).json(error);
   }

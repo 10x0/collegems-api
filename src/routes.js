@@ -3,6 +3,7 @@ const {
   createCourse,
   getAllCourses,
   editCourse,
+  deleteCourse,
 } = require('./features/course/course.controller');
 const {
   createmodule,
@@ -12,7 +13,7 @@ const {
 const router = express.Router();
 
 router.route('/courses').post(createCourse).get(getAllCourses);
-router.route('/courses/:id').put(editCourse);
+router.route('/courses/:id').put(editCourse).delete(deleteCourse);
 router.route('/modules').post(createmodule).get(getAllModules);
 
 module.exports = router;
