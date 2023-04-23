@@ -2,6 +2,7 @@ const express = require('express');
 const {
   createCourse,
   getAllCourses,
+  editCourse,
 } = require('./features/course/course.controller');
 const {
   createmodule,
@@ -11,6 +12,7 @@ const {
 const router = express.Router();
 
 router.route('/courses').post(createCourse).get(getAllCourses);
+router.route('/courses/:id').put(editCourse);
 router.route('/modules').post(createmodule).get(getAllModules);
 
 module.exports = router;
