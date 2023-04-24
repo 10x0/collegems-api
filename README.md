@@ -27,6 +27,10 @@ Paste the connection string as. Make sure to replace `<user>`, `<password>` and 
 
 `MONGO_URI=mongodb+srv://<user>:<password>@clustername.dimodnar.mongodb.net/dbName`
 
+## INSTALL PACKAGES
+
+`npm i`
+
 ## RUN
 
 To run, use following command in your terminal.
